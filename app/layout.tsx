@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/providers/theme-provider"
 import { QueryProvider } from "@/components/providers/query-provider";
 
 
-const spaceGroteskHeading = Space_Grotesk({subsets:['latin'],variable:'--font-heading'});
+const spaceGroteskHeading = Space_Grotesk({ subsets: ['latin'], variable: '--font-heading' });
 
-const montserrat = Montserrat({subsets:['latin'],variable:'--font-sans'});
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +33,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", montserrat.variable, spaceGroteskHeading.variable)}
+      className={cn("h-full", "antialiased", "font-sans", montserrat.variable, spaceGroteskHeading.variable)}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col" >
         <QueryProvider>
-      <ThemeProvider
+          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
@@ -45,7 +46,7 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
-          </QueryProvider>
+        </QueryProvider>
       </body>
     </html>
   );
