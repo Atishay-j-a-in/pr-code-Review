@@ -7,7 +7,7 @@ import {  UserMenuWithSession } from "@/features/auth/components/user-menu";
 
 export default function Home() {
   const {data} = authClient.useSession();
-  console.log("Session data:", data);
+
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <UserMenuWithSession variant="compact"/>
