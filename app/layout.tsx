@@ -10,17 +10,10 @@ const spaceGroteskHeading = Space_Grotesk({ subsets: ['latin'], variable: '--fon
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-sans' });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
+  icons: {
+    icon: "/logo2.png",
+  },
   title: "GraphPR — AI-Powered Code Reviews on Every PR",
   description:
     "GraphPR indexes your codebase and uses AI to review every pull request with full context. Automated, accurate, and instant.",
