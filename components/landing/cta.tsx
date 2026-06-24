@@ -11,8 +11,8 @@ export function CTA() {
     <section className="relative py-32 overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.05] rounded-full blur-[140px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -35,14 +35,14 @@ export function CTA() {
               <MagneticButton strength={0.15}>
                 <Link
                   href="/sign-in"
-                  className="group relative inline-flex items-center gap-2.5 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium text-[15px] hover:opacity-90 transition-all active:scale-[0.98]"
+                  className="group relative inline-flex items-center gap-2.5 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium text-[15px] hover:brightness-110 transition-all active:scale-[0.98]"
                 >
                   {/* Pulse ring */}
                   <motion.span
-                    className="absolute inset-0 rounded-full border-2 border-primary/30"
+                    className="absolute inset-0 rounded-full border-2 border-primary/20"
                     animate={{
-                      scale: [1, 1.15],
-                      opacity: [0.6, 0],
+                      scale: [1, 1.12],
+                      opacity: [0.5, 0],
                     }}
                     transition={{
                       duration: 2,
@@ -58,7 +58,7 @@ export function CTA() {
                 </Link>
               </MagneticButton>
 
-              <p className="text-xs text-muted-foreground/50">
+              <p className="text-xs text-muted-foreground/40">
                 Powered by OpenRouter{" "}
                 <span className="mx-1">&middot;</span> Pinecone{" "}
                 <span className="mx-1">&middot;</span> GitHub App

@@ -22,7 +22,7 @@ const diffLines = [
 const reviewComments = [
   { line: 3, text: "Good: dynamic file fetching", color: "emerald" },
   { line: 4, text: "Context improves review accuracy", color: "emerald" },
-  { line: 7, text: "Added codebase context for deeper analysis", color: "blue" },
+  { line: 7, text: "Added codebase context for deeper analysis", color: "sky" },
 ];
 
 export function CodeBlockAnimation() {
@@ -65,19 +65,19 @@ export function CodeBlockAnimation() {
   return (
     <div className="relative w-full max-w-lg">
       {/* Window chrome */}
-      <div className="rounded-t-xl bg-zinc-900 border border-b-0 border-zinc-800 px-4 py-3 flex items-center gap-2">
+      <div className="rounded-t-xl bg-[#161618] border border-b-0 border-white/[0.06] px-4 py-3 flex items-center gap-2">
         <div className="flex gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-zinc-700" />
-          <div className="w-3 h-3 rounded-full bg-zinc-700" />
-          <div className="w-3 h-3 rounded-full bg-zinc-700" />
+          <div className="w-3 h-3 rounded-full bg-white/[0.08]" />
+          <div className="w-3 h-3 rounded-full bg-white/[0.08]" />
+          <div className="w-3 h-3 rounded-full bg-white/[0.08]" />
         </div>
-        <span className="ml-2 text-xs text-zinc-500 font-mono">
+        <span className="ml-2 text-xs text-muted-foreground/60 font-mono">
           review-pr.ts
         </span>
       </div>
 
       {/* Code area */}
-      <div className="rounded-b-xl bg-zinc-950 border border-zinc-800 p-4 font-mono text-[13px] leading-6 overflow-hidden min-h-[320px]">
+      <div className="rounded-b-xl bg-[#0e0e10] border border-white/[0.06] p-4 font-mono text-[13px] leading-6 overflow-hidden min-h-[320px]">
         {diffLines.map((line, i) => {
           const isVisible = i < visibleLines;
           const prefix =
@@ -91,12 +91,12 @@ export function CodeBlockAnimation() {
               ? "text-emerald-400"
               : line.type === "deletion"
                 ? "text-red-400"
-                : "text-zinc-500";
+                : "text-white/30";
           const bgColor =
             line.type === "addition"
-              ? "bg-emerald-500/5"
+              ? "bg-emerald-500/[0.06]"
               : line.type === "deletion"
-                ? "bg-red-500/5"
+                ? "bg-red-500/[0.06]"
                 : "";
 
           return (
@@ -111,7 +111,7 @@ export function CodeBlockAnimation() {
                 transition={{ duration: 0.2 }}
                 className={`flex ${bgColor} -mx-4 px-4`}
               >
-                <span className="w-6 text-zinc-600 select-none text-right mr-3">
+                <span className="w-6 text-white/15 select-none text-right mr-3">
                   {prefix}
                 </span>
                 <span className={lineColor}>
@@ -133,7 +133,7 @@ export function CodeBlockAnimation() {
                     }}
                     className="absolute right-0 top-0 translate-x-full ml-3"
                   >
-                    <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg px-3 py-1.5 text-[11px] text-emerald-400 whitespace-nowrap font-sans">
+                    <div className="bg-emerald-500/[0.08] border border-emerald-500/20 rounded-lg px-3 py-1.5 text-[11px] text-emerald-400 whitespace-nowrap font-sans">
                       {
                         reviewComments.find((c) => c.line === i)
                           ?.text
@@ -160,7 +160,7 @@ export function CodeBlockAnimation() {
               }}
               className="mt-4 flex items-center gap-2 text-emerald-400"
             >
-              <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center">
                 <svg
                   className="w-3 h-3"
                   fill="none"

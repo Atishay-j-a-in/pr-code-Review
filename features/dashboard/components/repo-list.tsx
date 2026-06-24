@@ -152,10 +152,10 @@ export function RepoList() {
             />
           </div>
     
-          <div className="rounded-none border border-border">
+          <div className="rounded-2xl border border-white/[0.06] bg-card overflow-hidden">
             <Table>
               <TableHeader>
-                <TableRow>
+                <TableRow className="border-white/[0.06] hover:bg-transparent">
                   <TableHead>Repository</TableHead>
                   <TableHead>Visibility</TableHead>
                   <TableHead>Branch</TableHead>
@@ -182,7 +182,7 @@ function RepoRow({ repo }: { repo: DashboardRepo }) {
     const tone = repo.visibility === "public" ? "info" : "warning";
   
     return (
-      <TableRow>
+      <TableRow className="border-white/[0.04]">
         <TableCell>
           <div className="flex flex-col">
             <span className="font-medium">{repo.name}</span>

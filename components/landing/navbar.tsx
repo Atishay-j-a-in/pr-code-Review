@@ -22,14 +22,14 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border"
+          ? "bg-background/70 backdrop-blur-2xl border-b border-white/[0.06]"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="relative w-8 h-8 overflow-hidden rounded-lg">
+          <div className="relative w-8 h-8 overflow-hidden rounded-xl">
             <Image
               src="/logo2.png"
               alt="GraphPR logo"
@@ -53,7 +53,7 @@ export function Navbar() {
           <MagneticButton strength={0.2}>
             <Link
               href="/sign-in"
-              className="text-sm font-medium bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity active:scale-[0.98]"
+              className="text-sm font-medium bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:brightness-110 transition-all active:scale-[0.98]"
             >
               Get Started
             </Link>

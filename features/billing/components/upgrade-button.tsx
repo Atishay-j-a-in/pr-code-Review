@@ -27,7 +27,8 @@ export function UpgradeButton() {
 
 
     async function handleUpgrade() {
-        const key = process.env.RAZORPAY_KEY_ID;
+        const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+        console.log("Razorpay key:", key); // Log the key to verify it's being read correctly
         if (!key) { 
           toast.error("Razorpay is not configured yet.");
           return;

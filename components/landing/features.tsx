@@ -16,9 +16,8 @@ const features = [
     description:
       "Syncs your entire repository into a vector database. Reviews are not blind diffs — they understand your architecture, patterns, and conventions.",
     size: "large" as const,
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/5",
-    borderColor: "group-hover:border-blue-500/20",
+    color: "text-sky-400",
+    bgColor: "bg-sky-500/10",
   },
   {
     icon: Plugs,
@@ -26,9 +25,8 @@ const features = [
     description:
       "Install the GitHub App on any repo. Every PR gets reviewed automatically. Zero config, zero YAML files.",
     size: "small" as const,
-    color: "text-violet-500",
-    bgColor: "bg-violet-500/5",
-    borderColor: "group-hover:border-violet-500/20",
+    color: "text-violet-400",
+    bgColor: "bg-violet-500/10",
   },
   {
     icon: Brain,
@@ -36,9 +34,8 @@ const features = [
     description:
       "Catches bugs, security issues, and design problems that static linters miss. Powered by OpenRouter with model flexibility.",
     size: "small" as const,
-    color: "text-amber-500",
-    bgColor: "bg-amber-500/5",
-    borderColor: "group-hover:border-amber-500/20",
+    color: "text-amber-400",
+    bgColor: "bg-amber-500/10",
   },
   {
     icon: ChartBar,
@@ -46,9 +43,8 @@ const features = [
     description:
       "Track every review across all your repositories. Search, filter, and monitor code quality trends over time. Never lose visibility.",
     size: "large" as const,
-    color: "text-emerald-500",
-    bgColor: "bg-emerald-500/5",
-    borderColor: "group-hover:border-emerald-500/20",
+    color: "text-emerald-400",
+    bgColor: "bg-emerald-500/10",
   },
 ];
 
@@ -71,15 +67,15 @@ function FeatureCard({
       <motion.div
         whileHover={{ y: -4, rotateX: 2, rotateY: -2 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
-        className={`group relative h-full p-8 md:p-10 rounded-[2rem] bg-card border border-border ${feature.borderColor} transition-colors duration-300`}
+        className="group relative h-full p-8 md:p-10 rounded-[2rem] bg-card border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500"
         style={{ perspective: "800px" }}
       >
         {/* Spotlight effect on hover */}
-        <div className="absolute inset-0 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(600px_circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(255,255,255,0.04),transparent_40%)]" />
+        <div className="absolute inset-0 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(600px_circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(255,255,255,0.03),transparent_40%)]" />
 
         <div className="relative z-10">
           <div
-            className={`w-12 h-12 rounded-xl ${feature.bgColor} flex items-center justify-center mb-6`}
+            className={`w-12 h-12 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-6`}
           >
             <Icon className={`w-6 h-6 ${feature.color}`} weight="duotone" />
           </div>
@@ -93,7 +89,7 @@ function FeatureCard({
         </div>
 
         {/* Bottom accent line */}
-        <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </motion.div>
     </ScrollReveal>
   );

@@ -24,10 +24,10 @@ type DashboardHeaderProps = {
  */
 export function DashboardHeader({ title, description }: DashboardHeaderProps) {
   return (
-    <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border px-4">
+    <header className="flex h-14 shrink-0 items-center gap-2 border-b border-white/[0.06] bg-background/80 backdrop-blur-xl px-4">
       {/* Opens/closes the sidebar on smaller screens or icon-collapsed mode */}
       <SidebarTrigger className="-ml-1" />
-      <Separator orientation="vertical" className="mr-2 h-4" />
+      <Separator orientation="vertical" className="mr-2 h-4 bg-white/[0.06]" />
       <div className="flex min-w-0 flex-col">
         <h1 className="truncate text-sm font-medium">{title}</h1>
         {description ? (

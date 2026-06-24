@@ -85,7 +85,7 @@ function ProfileTab({ profile }: { profile: SettingsProfile }) {
   const memberSince = format(new Date(profile.memberSince), "MMMM d, yyyy");
 
   return (
-    <Card>
+    <Card className="rounded-2xl border-white/[0.06]">
       <CardHeader>
         <CardTitle>Profile</CardTitle>
         <CardDescription>
@@ -168,15 +168,15 @@ function SubscriptionTab({
   const isActive = subscription.status === "active" || subscription.status === "trialing";
 
   // Visual styling reflects active vs inactive subscription
-  let cardBorderClass = "border-border";
+  let cardBorderClass = "border-white/[0.06]";
   let planTextClass = "text-foreground";
   let statusTextClass = "text-muted-foreground";
   let badgeTone: "success" | "neutral" | "warning" = "neutral";
 
   if (isActive) {
-    cardBorderClass = "border-green-500/25";
-    planTextClass = "text-green-800 dark:text-green-300";
-    statusTextClass = "text-green-700 dark:text-green-400";
+    cardBorderClass = "border-emerald-500/20";
+    planTextClass = "text-emerald-300";
+    statusTextClass = "text-emerald-400";
     badgeTone = "success";
   }
 
@@ -185,7 +185,7 @@ function SubscriptionTab({
   }
 
   return (
-    <Card className={cardBorderClass}>
+    <Card className={`${cardBorderClass} rounded-2xl`}>
       <CardHeader>
         <CardTitle>Subscription</CardTitle>
         <CardDescription>
@@ -195,10 +195,10 @@ function SubscriptionTab({
       <CardContent className="space-y-4">
         <div
           className={cn(
-            "flex flex-wrap items-center justify-between gap-4 rounded-none border p-4",
+            "flex flex-wrap items-center justify-between gap-4 rounded-2xl border p-4",
             isActive
-              ? "border-green-500/30 bg-green-500/5"
-              : "border-border bg-muted/30"
+              ? "border-emerald-500/20 bg-emerald-500/[0.06]"
+              : "border-white/[0.06] bg-white/[0.02]"
           )}
         >
           <div>

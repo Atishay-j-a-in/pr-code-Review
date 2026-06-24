@@ -16,16 +16,16 @@ const steps = [
     title: "PR Opened",
     description:
       "Developer opens a pull request on GitHub. GraphPR picks it up instantly via webhook.",
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-    borderColor: "border-blue-500/20",
+    color: "text-sky-400",
+    bgColor: "bg-sky-500/10",
+    borderColor: "border-sky-500/20",
   },
   {
     icon: Database,
     title: "Code Indexed",
     description:
       "Your codebase is chunked and embedded into Pinecone. Reviews have full architectural context.",
-    color: "text-violet-500",
+    color: "text-violet-400",
     bgColor: "bg-violet-500/10",
     borderColor: "border-violet-500/20",
   },
@@ -34,7 +34,7 @@ const steps = [
     title: "AI Reviews",
     description:
       "OpenRouter-powered analysis compares the diff against your entire codebase for deep, accurate feedback.",
-    color: "text-amber-500",
+    color: "text-amber-400",
     bgColor: "bg-amber-500/10",
     borderColor: "border-amber-500/20",
   },
@@ -42,8 +42,8 @@ const steps = [
     icon: CheckCircle,
     title: "Review Posted",
     description:
-      "A detailed, line-by review is posted directly on the PR. Your team sees it immediately.",
-    color: "text-emerald-500",
+      "A detailed, line-by-line review is posted directly on the PR. Your team sees it immediately.",
+    color: "text-emerald-400",
     bgColor: "bg-emerald-500/10",
     borderColor: "border-emerald-500/20",
   },
@@ -59,7 +59,7 @@ function FlowLine() {
         initial={{ scaleY: 0 }}
         animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full h-full bg-gradient-to-b from-border via-border to-transparent origin-top"
+        className="w-full h-full bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-transparent origin-top"
       />
     </div>
   );
@@ -103,7 +103,7 @@ export function AnimatedFlow() {
                         stiffness: 300,
                         damping: 15,
                       }}
-                      className={`relative z-10 flex-shrink-0 w-12 h-12 rounded-xl ${step.bgColor} border ${step.borderColor} flex items-center justify-center`}
+                      className={`relative z-10 flex-shrink-0 w-12 h-12 rounded-2xl ${step.bgColor} border ${step.borderColor} flex items-center justify-center`}
                     >
                       <Icon className={`w-5 h-5 ${step.color}`} weight="duotone" />
                     </motion.div>

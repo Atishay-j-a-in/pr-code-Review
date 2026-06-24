@@ -30,6 +30,25 @@ export type GithubInstallationStatus = {
   installedAt: string | null;
 };
 
+/**
+ * A pull request row displayed in the Pull Requests table.
+ * Fields mirror the `PullRequest` Prisma model.
+ */
+export type DashboardPullRequest = {
+  id: string;
+  repoFullName: string;
+  prNumber: number;
+  title: string;
+  authorLogin: string | null;
+  headSha: string;
+  baseBranch: string;
+  status: string;
+  reviewComment: string | null;
+  reviewedAt: string | null;
+  createdAt: string;
+  updatedAt: string;
+};
+
 /** The two billing tiers available in the app. */
 export type SubscriptionPlan = "free" | "pro";
 
