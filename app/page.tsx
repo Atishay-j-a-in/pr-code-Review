@@ -1,5 +1,5 @@
 "use client"
-import { ModeToggle } from "@/components/ui/mode-toggle";
+
 import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
 import {  UserMenuWithSession } from "@/features/auth/components/user-menu";
@@ -66,7 +66,6 @@ export default function Home() {
           >
             Documentation
           </a>
-          <ModeToggle />
         </div>
       </main>
     </div>
