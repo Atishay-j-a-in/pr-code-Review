@@ -34,7 +34,7 @@ export async function getInstallationStatus(userId: string) {
     return { 
         connected: true,
         accountLogin:installation.accountLogin,
-        installationDate: installation.createdAt?.toISOString() ?? null,
+        installedAt: installation.createdAt.toISOString()
     }
 }
 export async function saveInstallation(userId:string, installationId:number)
